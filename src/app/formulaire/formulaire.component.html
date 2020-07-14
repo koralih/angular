@@ -1,0 +1,62 @@
+
+    <mat-card class="card"> Formulaire Form
+
+    <form [formGroup]="loginForm" class="example-form">
+    
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput   type="text" placeholder="email" name="email"  formControlName="email">
+        
+      </mat-form-field>
+      <div *ngIf="email.invalid &&  email.touched"
+    >
+  
+      <div *ngIf="email.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="email.errors.email">
+        Verify your mail.
+      </div>
+      </div>
+      <mat-form-field class="example-full-width">
+          <mat-label>password</mat-label>
+          <input matInput placeholder="password"  type="password"   formControlName="password">
+      </mat-form-field>
+      <div *ngIf="password.invalid &&  password.touched"
+      class="alert alert-danger">
+    
+        <div *ngIf="password.errors.required">
+          password required.
+        </div>
+        <div *ngIf="password.errors.minLength">
+            password should contain at least 8 carcters
+          </div>
+         <!-- <div *ngIf="password.errors.pattern">
+            password should contain at least an UpperCase letter
+          </div>-->
+        </div>
+  
+  
+      <div class="button-wrapper">
+          <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" >Submit</button>
+       
+  
+        </div>
+  
+       <!-- <ul class="login-more p-t-190">
+  
+  
+          <li>
+              <span class="txt1">
+                  Don’t have an account?
+              </span>
+  
+              <a routerLink="/register" class="txt2">
+                  register
+              </a>
+          </li>
+      </ul>-->
+  
+    </form>
+  </mat-card>

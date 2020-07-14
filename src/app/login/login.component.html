@@ -1,0 +1,44 @@
+<mat-card>Login Form
+
+
+  <form [formGroup]="loginForm" class="example-form">
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>username</mat-label>
+      <input matInput  required type="text" placeholder="username" formControlName="username" [ngClass]="{'coler': menus.allMenu}">
+
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>password</mat-label>
+        <input matInput placeholder="password" type="password"   formControlName="password" [ngStyle]="{'background-color':cc.green }">
+
+
+
+    </mat-form-field>
+
+
+    <div class="button-wrapper">
+        <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" (click)="changeCategory('allMenu')">Submit</button>
+        <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" (click)="changeCategor('green')">Submit</button>
+
+      </div>
+
+     <!-- <ul class="login-more p-t-190">
+
+
+        <li>
+            <span class="txt1">
+                Don’t have an account?
+            </span>
+
+            <a routerLink="/register" class="txt2">
+                register
+            </a>
+        </li>
+    </ul>-->
+
+  </form>
+</mat-card>
