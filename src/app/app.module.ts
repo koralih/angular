@@ -10,7 +10,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormulaireComponent } from './formulaire/formulaire.component';
-
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 const MaterielComponents=[
   MatButtonModule
 ];
@@ -19,7 +20,8 @@ const MaterielComponents=[
   declarations: [
     AppComponent,
     LoginComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ const MaterielComponents=[
     MatButtonModule,
     MatInputModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule
     
 
   ],
