@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { AffichageComponent } from './affichage/affichage.component';
 const MaterielComponents=[
   MatButtonModule
 ];
@@ -21,7 +22,8 @@ const MaterielComponents=[
     AppComponent,
     LoginComponent,
     FormulaireComponent,
-    NavbarComponent
+    NavbarComponent,
+    AffichageComponent
   ],
   imports: [
     BrowserModule,

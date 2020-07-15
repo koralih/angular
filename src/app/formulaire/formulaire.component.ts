@@ -34,5 +34,18 @@ export class FormulaireComponent implements OnInit {
   get email() { return this.loginForm.get('email');
  }
  get password () { return this.loginForm.get('password');}
-
+show(){
+  console.log('helllllllllloooooooooo', this.email.value);
+  console.log(this.password.value);
+  let key = 'user';
+  let item = JSON.parse(localStorage.getItem(key)) || [];
+  console.log("iteeeeeeeeeeem"+item);
+  
+  let obj = new Object();
+  obj= {emai:this.email.value , password:this.password.value}
+  item.push(obj);
+  localStorage.setItem(key, JSON.stringify(item));
+  console.log(item);
+  
+}
 }
