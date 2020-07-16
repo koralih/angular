@@ -9,6 +9,7 @@ import{User} from '../User'
 })
 export class FormulaireComponent implements OnInit {
   loginForm : FormGroup;
+  email1:string;
   loading=false;
   submitted=false;
   returnUrl:string;
@@ -28,11 +29,20 @@ export class FormulaireComponent implements OnInit {
       console.log(this.user);
     }
     onSubmit(){
-      labemail:'mail'
+      this.getemail();
     
   }
   get email() { return this.loginForm.get('email');
  }
  get password () { return this.loginForm.get('password');}
-
+ getemail(){
+  let key = 'user';
+  let myObj = { email: this.email.value, password: this.password.value };
+  localStorage.setItem(key, JSON.stringify(myObj));
+  
+  this.email1 = localStorage.getItem("emai1");
+  console.log("aaaaaaaaaa",this.email.value);
+  }
+  
+  
 }
