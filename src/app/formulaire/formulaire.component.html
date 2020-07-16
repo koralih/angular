@@ -12,12 +12,12 @@
       <div *ngIf="email.invalid &&  email.touched"
     >
   
-      <div *ngIf="email.errors.required">
-        Name is required.
-      </div>
-      <div *ngIf="email.errors.email">
+      <mat-error  *ngIf="loginForm.hasError('required','email')">
+        Email is <strong>required</strong>
+      </mat-error >
+      <mat-error  *ngIf="loginForm.hasError('errors','email')">
         Verify your mail.
-      </div>
+      </mat-error >
       </div>
       <mat-form-field class="example-full-width">
           <mat-label>password</mat-label>
@@ -25,10 +25,11 @@
       </mat-form-field>
       <div *ngIf="password.invalid &&  password.touched"
       class="alert alert-danger">
-    
-        <div *ngIf="password.errors.required">
+    <mat-error *ngIf="loginForm.hasError('errors','password')">
+        
           password required.
-        </div>
+       
+      </mat-error>
         <div *ngIf="password.errors.minLength">
             password should contain at least 8 carcters
           </div>
@@ -41,8 +42,8 @@
       <div class="button-wrapper">
           <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" (click)="show()" >Submit</button>
        
-  
         </div>
+       
   
        <!-- <ul class="login-more p-t-190">
   
@@ -60,3 +61,7 @@
   
     </form>
   </mat-card>
+
+  <input type="text" [(ngModel)]="input1">
+  <input type="text" [(ngModel)]="input2">
+  <button type="button" (click)="myfunction()">Show</button>

@@ -10,6 +10,8 @@ import{User} from '../User'
 export class FormulaireComponent implements OnInit {
   loginForm : FormGroup;
   email1:string;
+  input1:string;
+  input2:string;
   loading=false;
   submitted=false;
   returnUrl:string;
@@ -48,6 +50,10 @@ export class FormulaireComponent implements OnInit {
   localStorage.setItem(key, JSON.stringify(item));
   console.log(item);
 
+}
+myfunction(){
+  this.input1 = this.email.value;
+  this.input2 = this.password.value;
 }
   
 }

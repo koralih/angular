@@ -8,11 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {  MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AffichageComponent } from './affichage/affichage.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 const MaterielComponents=[
   MatButtonModule
 ];
@@ -33,7 +36,9 @@ const MaterielComponents=[
     MatInputModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatFormFieldModule,
+    FormsModule
     
 
   ],
