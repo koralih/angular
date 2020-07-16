@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./affichage.component.scss']
 })
 export class AffichageComponent implements OnInit {
-
+   key='user';
+  fsubList:Array<any> = JSON.parse(localStorage.getItem(this.key));
   constructor() { }
 
   ngOnInit(): void {

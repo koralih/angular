@@ -9,9 +9,9 @@
     </thead>
     <tbody> 
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
+        <tr *ngFor="let obj of fsubList">
+          <td>{{obj.email}}</td>
+          <td>{{obj.password}}</td>
       </tr>
       <tr>
         <th scope="row">2</th>
