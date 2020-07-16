@@ -43,7 +43,7 @@ export class FormulaireComponent implements OnInit {
   console.log("iteeeeeeeeeeem"+item);
 
   let obj = new Object();
-  obj= {emai:this.email.value , password:this.password.value}
+  obj= {email:this.email.value , password:this.password.value}
   item.push(obj);
   localStorage.setItem(key, JSON.stringify(item));
   console.log(item);
