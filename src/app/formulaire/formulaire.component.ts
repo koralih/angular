@@ -29,20 +29,25 @@ export class FormulaireComponent implements OnInit {
       console.log(this.user);
     }
     onSubmit(){
-      this.getemail();
+      this.show();
     
   }
   get email() { return this.loginForm.get('email');
  }
  get password () { return this.loginForm.get('password');}
- getemail(){
+ show(){
+  console.log('helllllllllloooooooooo', this.email.value);
+  console.log(this.password.value);
   let key = 'user';
-  let myObj = { email: this.email.value, password: this.password.value };
-  localStorage.setItem(key, JSON.stringify(myObj));
-  
-  this.email1 = localStorage.getItem("emai1");
-  console.log("aaaaaaaaaa",this.email.value);
-  }
-  
+  let item = JSON.parse(localStorage.getItem(key)) || [];
+  console.log("iteeeeeeeeeeem"+item);
+
+  let obj = new Object();
+  obj= {emai:this.email.value , password:this.password.value}
+  item.push(obj);
+  localStorage.setItem(key, JSON.stringify(item));
+  console.log(item);
+
+}
   
 }
