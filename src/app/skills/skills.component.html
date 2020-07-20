@@ -1,0 +1,16 @@
+<p>skills works!</p>
+<mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList aria-label="skills selection">
+      <mat-chip *ngFor="let skills of skills" [selectable]="selectable"
+               [removable]="removable" (removed)="remove(skills)">
+        {{skills.name}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="New skill..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>
+  

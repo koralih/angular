@@ -14,7 +14,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AffichageComponent } from './affichage/affichage.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { SkillsComponent } from './skills/skills.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 const MaterielComponents=[
   MatButtonModule
@@ -26,7 +27,8 @@ const MaterielComponents=[
     LoginComponent,
     FormulaireComponent,
     NavbarComponent,
-    AffichageComponent
+    AffichageComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,9 @@ const MaterielComponents=[
     ReactiveFormsModule,
     MatToolbarModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    MatChipsModule,
+   
     
 
   ],
