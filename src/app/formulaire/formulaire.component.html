@@ -6,7 +6,7 @@
   
       <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
-        <input matInput   type="text" placeholder="email" name="email"  formControlName="email" value="{{email1}}">
+        <input matInput   type="text" placeholder="email" name="email"  formControlName="email" value="{{email1}}" [(ngModel)]="input1">
         
       </mat-form-field>
       <div *ngIf="email.invalid &&  email.touched"
@@ -21,7 +21,7 @@
       </div>
       <mat-form-field class="example-full-width">
           <mat-label>password</mat-label>
-          <input matInput placeholder="password"  type="password"   formControlName="password">
+          <input matInput placeholder="password"  type="password"   formControlName="password" [(ngModel)]="input2">
       </mat-form-field>
       <mat-error *ngIf="password.invalid &&  password.touched"
       class="alert alert-danger">
@@ -75,8 +75,8 @@
       <tr>
         <tr>
           <td></td>
-          <td><input type="text" [(ngModel)]="input1"></td>
-          <td><input type="text" [(ngModel)]="input2"></td>
+          <td><h4>{{input1}}</h4></td>
+          <td><h4>{{input2}}</h4></td>
          
       </tr>
     </tbody>
