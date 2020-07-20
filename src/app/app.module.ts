@@ -16,6 +16,7 @@ import { AffichageComponent } from './affichage/affichage.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { SkillsComponent } from './skills/skills.component';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
 
 const MaterielComponents=[
   MatButtonModule
@@ -42,6 +43,7 @@ const MaterielComponents=[
     MatFormFieldModule,
     FormsModule,
     MatChipsModule,
+    MatIconModule
    
     
 

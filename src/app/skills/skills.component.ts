@@ -6,6 +6,10 @@ export interface Skills {
   name: string;
 }
 
+export interface Experience {
+  name: string;
+}
+
 
 @Component({
   selector: 'app-skills',
@@ -25,7 +29,18 @@ export class SkillsComponent implements OnInit {
     {name: 'Angular'},
   ];
 
+  exp: Experience[] = [
+    {name: 'work'},
+  ];
 
+
+  removeExp(exp: Experience): void {
+    const index = this.exp.indexOf(exp);
+
+    if (index >= 0) {
+      this.exp.splice(index, 1);
+    }
+  }
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -48,6 +63,24 @@ export class SkillsComponent implements OnInit {
       this.skills.splice(index, 1);
     }
   }
+
+  addExp(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our fruit
+    if ((value || '').trim()) {
+      this.exp.push({name: value.trim()});
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  
+  
 
 
   constructor() { }

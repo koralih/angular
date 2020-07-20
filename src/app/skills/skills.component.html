@@ -1,5 +1,5 @@
 <p>skills works!</p>
-<mat-form-field class="example-chip-list">
+<!--<mat-form-field class="example-chip-list">
     <mat-chip-list #chipList aria-label="skills selection">
       <mat-chip *ngFor="let skills of skills" [selectable]="selectable"
                [removable]="removable" (removed)="remove(skills)">
@@ -12,5 +12,17 @@
              [matChipInputAddOnBlur]="addOnBlur"
              (matChipInputTokenEnd)="add($event)">
     </mat-chip-list>
-  </mat-form-field>
+  </mat-form-field>-->
   
+<br>
+  <mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList aria-label="exp selection">
+    <input placeholder="New Experience..."
+    [matChipInputFor]="chipList"
+    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    [matChipInputAddOnBlur]="addOnBlur"
+    (matChipInputTokenEnd)="addExp($event)">
+    </mat-chip-list>
+  </mat-form-field>
+  <button class="btn btn-primary" (click)="addExp($event)">Add</button>
+  <button class="btn btn-primary" (click)="removeExp($event)">Delete</button>
