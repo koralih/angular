@@ -23,20 +23,21 @@
           <mat-label>password</mat-label>
           <input matInput placeholder="password"  type="password"   formControlName="password">
       </mat-form-field>
-      <div *ngIf="password.invalid &&  password.touched"
+      <mat-error *ngIf="password.invalid &&  password.touched"
       class="alert alert-danger">
+      </mat-error>
     <mat-error *ngIf="loginForm.hasError('errors','password')">
         
           password required.
        
       </mat-error>
-        <div *ngIf="password.errors.minLength">
+        <mat-error *ngIf="password.errors.minLength">
             password should contain at least 8 carcters
-          </div>
+          </mat-error>
          <!-- <div *ngIf="password.errors.pattern">
             password should contain at least an UpperCase letter
           </div>-->
-        </div>
+        
   
   
       <div class="button-wrapper">
@@ -62,6 +63,26 @@
     </form>
   </mat-card>
 
-  <input type="text" [(ngModel)]="input1">
-  <input type="text" [(ngModel)]="input2">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr>
+        <tr>
+          <td></td>
+          <td><input type="text" [(ngModel)]="input1"></td>
+          <td><input type="text" [(ngModel)]="input2"></td>
+         
+      </tr>
+    </tbody>
+  </table>
   <button type="button" (click)="myfunction()">Show</button>
+
+ <!-- <input type="text" [(ngModel)]="input1">
+  <input type="text" [(ngModel)]="input2">
+  <button type="button" (click)="myfunction()">Show</button> -->
