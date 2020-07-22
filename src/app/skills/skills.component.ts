@@ -88,9 +88,9 @@ export class SkillsComponent implements OnInit {
     }));
   }
 
-  deleteCreds() {
+  deleteCreds(index: number) {
     const creds = this.form.controls.credentials as FormArray;
-  
+  creds.removeAt(index);
   }
 
 
