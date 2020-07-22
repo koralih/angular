@@ -17,6 +17,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { SkillsComponent } from './skills/skills.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
+import { ParentComponent } from './parent/parent.component';
+import { Chlid1Component } from './parent/chlid1/chlid1.component';
+import { Chlid2Component } from './parent/chlid2/chlid2.component';
 
 const MaterielComponents=[
   MatButtonModule
@@ -29,7 +32,10 @@ const MaterielComponents=[
     FormulaireComponent,
     NavbarComponent,
     AffichageComponent,
-    SkillsComponent
+    SkillsComponent,
+    ParentComponent,
+    Chlid1Component,
+    Chlid2Component
   ],
   imports: [
     BrowserModule,
