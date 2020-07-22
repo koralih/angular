@@ -22,11 +22,11 @@
 
      
      <button (click)="addCreds()" class="btn btn-primary">Add New Experience</button>
-     <button (click)="deleteCreds()" class="btn btn-primary">Delete Experience</button>
+    
      <div formArrayName="credentials" *ngFor="let creds of form.controls.credentials?.value; let j = index">
-       <ng-container [formGroupName]="j">
+       <ng-container [formGroupName]="">
          
-            <input   type="text"  formControlName="exp" >
+            <input   type="text"  formControlName="exp" [formControl]="skills.controls[j]"> <button (click)="deleteCreds(j)" class="btn btn-primary">Delete Experience</button>
       
        </ng-container>
      </div>
