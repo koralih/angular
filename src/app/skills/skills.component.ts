@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material/chips';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 export interface Skills {
   name: string;
@@ -23,6 +25,8 @@ export class SkillsComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
+  form: FormGroup;
+  tab=[];
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   skills: Skills[] = [
     {name: 'node'},
@@ -32,7 +36,6 @@ export class SkillsComponent implements OnInit {
   exp: Experience[] = [
     {name: 'work'},
   ];
-
 
   removeExp(exp: Experience): void {
     const index = this.exp.indexOf(exp);
@@ -64,29 +67,35 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  addExp(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
+  addExp(){
 
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.exp.push({name: value.trim()});
-    }
+  }
+  
+  
+  
+    
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      published: true,
+      credentials: this.fb.array([]),
+    });
+   }
 
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
+   addCreds() {
+    const creds = this.form.controls.credentials as FormArray;
+    creds.push(this.fb.group({
+      exp: '',
+    }));
   }
 
+  deleteCreds() {
+    const creds = this.form.controls.credentials as FormArray;
   
-  
+  }
 
-
-  constructor() { }
 
   ngOnInit(): void {
+  
+  } 
 
-
-} 
 }
