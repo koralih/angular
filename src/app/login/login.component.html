@@ -6,14 +6,14 @@
 
     <mat-form-field class="example-full-width">
       <mat-label>username</mat-label>
-      <input matInput  required type="text" placeholder="username" formControlName="username" [ngClass]="{'coler': menus.allMenu}">
+      <input matInput  required type="text" placeholder="username" formControlName="username" [ngClass]="{'coler': menus.allMenu}" [(ngModel)]="input1">
 
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width">
         <mat-label>password</mat-label>
-        <input matInput placeholder="password" type="password"   formControlName="password" [ngStyle]="{'background-color':cc.green }">
+        <input matInput placeholder="password" type="password"   formControlName="password" [ngStyle]="{'background-color':cc.green }" [(ngModel)]="input2">
 
 
 
@@ -21,6 +21,7 @@
 
 
     <div class="button-wrapper">
+      <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" (click)="login()">Submit</button>
         <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" (click)="changeCategory('allMenu')">Submit</button>
         <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" (click)="changeCategor('green')">Submit</button>
 

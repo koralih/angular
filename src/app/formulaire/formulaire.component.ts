@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,Validators, FormControl } from '@angular/forms';
 import{User} from '../User'
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-formulaire',
@@ -19,7 +20,7 @@ export class FormulaireComponent implements OnInit {
   menus ={ allMenu :false };
   user: User = new User();
   cc ={ green :'' }
-    constructor(private FormGroup: FormBuilder,) { }
+    constructor(private FormGroup: FormBuilder,private userService: UserService) { }
     ngOnInit (): void {
       this.loginForm = this.FormGroup.group({
         email: new FormControl ('',[Validators.required,Validators.email]),
@@ -31,26 +32,11 @@ export class FormulaireComponent implements OnInit {
       console.log(this.user);
     }
     onSubmit(){
-      this.show();
-    
+ this.userService.regester(this.email.value,this.password.value)    
   }
   get email() { return this.loginForm.get('email');
  }
  get password () { return this.loginForm.get('password');}
- show(){
-  console.log('helllllllllloooooooooo', this.email.value);
-  console.log(this.password.value);
-  let key = 'user';
-  let item = JSON.parse(localStorage.getItem(key)) || [];
-  console.log("iteeeeeeeeeeem"+item);
-
-  let obj = new Object();
-  obj= {email:this.email.value , password:this.password.value}
-  item.push(obj);
-  localStorage.setItem(key, JSON.stringify(item));
-  console.log(item);
-
-}
 myfunction(){
   this.input1 = this.email.value;
   this.input2 = this.password.value;

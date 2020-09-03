@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { AffichageComponent } from './affichage/affichage.component';
 import { SkillsComponent } from './skills/skills.component';
+import { UserService } from './user.service';
 
 
 const routes: Routes = [

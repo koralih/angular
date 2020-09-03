@@ -1,8 +1,7 @@
-<p>affichage works!</p>
 <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">list</th>
         <th scope="col">Email</th>
         <th scope="col">Password</th>
       </tr>
@@ -11,7 +10,7 @@
       <tr>
         <tr *ngFor="let obj of fsubList">
           <td></td>
-          <td>{{obj.email}}</td>
+          <td>{{obj.email | uppercase}}</td>
           <td>{{obj.password}}</td>
          
       </tr>

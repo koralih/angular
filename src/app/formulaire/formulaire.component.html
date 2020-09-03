@@ -21,7 +21,7 @@
       </div>
       <mat-form-field class="example-full-width">
           <mat-label>password</mat-label>
-          <input matInput placeholder="password"  type="password"   formControlName="password" [(ngModel)]="input2">
+          <input matInput placeholder="password"  type="password"  formControlName="password" [(ngModel)]="input2">
       </mat-form-field>
       <mat-error *ngIf="password.invalid &&  password.touched"
       class="alert alert-danger">
@@ -41,7 +41,7 @@
   
   
       <div class="button-wrapper">
-          <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" (click)="show()" >Submit</button>
+          <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary" (click)="onSubmit()" >Submit</button>
        
         </div>
        

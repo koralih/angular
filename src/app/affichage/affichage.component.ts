@@ -1,26 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit} from '@angular/core';
+import { UserService } from '../user.service';
+// import {UpperCasePipeComponent}  from './uppercasepipe.component';
+// import {LowerCasePipeComponent}  from './lowercasepipe.component';
 @Component({
   selector: 'app-affichage',
   templateUrl: './affichage.component.html',
   styleUrls: ['./affichage.component.scss']
 })
+
 export class AffichageComponent implements OnInit {
-   key='user';
-  fsubList:Array<any> = JSON.parse(localStorage.getItem(this.key));
-  constructor() { }
+  fsubList:Array<any>;
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    let key = 'user';
-    let item = JSON.parse(localStorage.getItem(key)) || [];
-    for (let i = 0; i<localStorage.length; i++){
-      let key = localStorage.key(i);
-      let value = localStorage.getItem(key);
-      console.log(key, value);
-      console.log(item);
+    this.fsubList =  this.userService.affich()
+     
   }
 
 
   
 }
-}
+

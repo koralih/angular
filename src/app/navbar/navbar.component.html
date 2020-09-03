@@ -1,7 +1,9 @@
 <mat-toolbar color='primary'>
     <span>My Application</span>
-    <a mat-button routerLink="login"> Login</a>
-    <a mat-button routerLink="formulaire">Formulaire</a>
-    <a mat-button routerLink="affichage">affichage</a>
-    <a mat-button routerLink="skills">skills</a>
+
+    <a mat-button *ngIf="!(isLoggedIn | async)" (click)="userService.login()" routerLink="login">Login</a>
+    <a mat-button *ngIf="!(isLoggedIn | async)" routerLink="formulaire">register</a>
+    <a mat-button *ngIf="(isLoggedIn | async)" routerLink="affichage">list user</a>
+    <a mat-button *ngIf="(isLoggedIn | async)" routerLink="skills">skills</a>
+    <a mat-button *ngIf="(isLoggedIn | async)" (click)="logout()">Logout</a>
   </mat-toolbar>
